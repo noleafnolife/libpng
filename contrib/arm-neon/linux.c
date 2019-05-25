@@ -1,8 +1,8 @@
 /* contrib/arm-neon/linux.c
  *
- * Last changed in libpng 1.6.31 [July 27, 2017]
- * Copyright (c) 2014, 2017 Glenn Randers-Pehrson
- * Written by John Bowler, 2014, 2017.
+ * Copyright (c) 2014 Glenn Randers-Pehrson
+ * Written by John Bowler, 2014.
+ * Last changed in libpng 1.6.16 [December 22, 2014]
  *
  * This code is released under the libpng license.
  * For conditions of distribution and use, see the disclaimer
@@ -62,7 +62,7 @@ png_have_neon(png_structp png_ptr)
 
                counter=0;
                state = Feature;
-               /* FALLTHROUGH */
+               /* FALL THROUGH */
 
             case Feature:
                /* Match 'FEATURE', ASCII case insensitive. */
@@ -72,10 +72,10 @@ png_have_neon(png_structp png_ptr)
                      state = Colon;
                   break;
                }
-
+               
                /* did not match 'feature' */
                state = SkipLine;
-               /* FALLTHROUGH */
+               /* FALL THROUGH */
 
             case SkipLine:
             skipLine:
@@ -110,7 +110,7 @@ png_have_neon(png_structp png_ptr)
 
                state = Neon;
                counter = 0;
-               /* FALLTHROUGH */
+               /* FALL THROUGH */
 
             case Neon:
                /* Look for 'neon' tag */
@@ -122,7 +122,7 @@ png_have_neon(png_structp png_ptr)
                }
 
                state = SkipTag;
-               /* FALLTHROUGH */
+               /* FALL THROUGH */
 
             case SkipTag:
                /* Skip non-space characters */
